@@ -68,8 +68,8 @@ body{margin:0;font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe U
 .section-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:.5rem}
 .muted{color:var(--muted)}
 
-.founder{padding:1.5rem;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center}
-.founder p{color:var(--muted);margin:.2rem 0 0}
+.team{padding:1.5rem;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center}
+.team p{color:var(--muted);margin:.2rem 0 0}
 
 .join{text-align:center;padding:2rem 1rem}
 
