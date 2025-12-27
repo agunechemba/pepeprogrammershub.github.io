@@ -1,54 +1,290 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pepe Programmers Hub</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Site is dark-only -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pepe Programmers Hub — Participate and Innovate</title>
+  <meta name="description" content="A vibrant community where teens learn to code, build projects, and innovate. Tutorials, mentorship, and community challenges." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/10/pepe-programming-hub-logo-jpg.jpg" />
+  <meta property="og:title" content="Pepe Programmers Hub" />
+  <meta property="og:description" content="Start your coding adventure with a vibrant community of young programmers. At Pepe Programmers Hub, you’ll learn to code, experiment with game creation, and ship projects." />
+  <meta property="og:image" content="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/10/pepe-programming-hub-logo-jpg.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="google-adsense-account" content="ca-pub-4977678185530379">
+
+  <!-- Code background styles -->
+  <style>
+    /* Canvas sits behind page content */
+    #code-bg {
+      position: fixed;
+      inset: 0; /* top:0; right:0; bottom:0; left:0; */
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.12; /* tweak for subtle effect */
+      mix-blend-mode: screen;
+      background: transparent;
+    }
+
+    /* Ensure main content sits above the canvas */
+    header, main, footer, .banner, .drawer {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Slightly reduce contrast on images so code effect is visible */
+    .mock img { filter: saturate(.95) contrast(.98); }
+
+    /* Respect prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+      #code-bg { display: none !important; }
+    }
+  </style>
 </head>
 <body>
-  <!-- Animated background (pure CSS) -->
-  <div class="bg-anim" aria-hidden="true">
-    <span class="blob blob-1"></span>
-    <span class="blob blob-2"></span>
-    <span class="blob blob-3"></span>
-  </div>
+  <!-- Fullscreen canvas for animated code background -->
+  <canvas id="code-bg" aria-hidden="true"></canvas>
 
-  <header class="site-header">
-    <h1>Pepe Programmers Hub</h1>
-    <p>Home Page<br>Welcome!</p>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="banner" role="status">🚀 Don't miss our Next Bootcamp! 🚀</div>
+
+  <header class="header" aria-label="Primary">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home">
+        <img src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/10/pepe-programming-hub-logo-jpg.jpg" width="80" height="80" alt="Pepe Programmers Hub logo" />
+        <span class="name">PPH</span>
+      </a>
+      <span class="bn" aria-label="Business Number">BN: 8014966</span>
+      <div class="links" role="menubar">
+        <a href="#about" role="menuitem">About</a>
+        <a href="#prodigies" role="menuitem">Prodigies</a>
+        <a href="#join" role="menuitem">Join</a>
+        <a href="#testimonials" role="menuitem">Testimonials</a>
+        <a href="#certificates" role="meniitem">Certificates</a>
+        <a href="#team" role="menuitem">Team</a>
+      </div>
+      <div style="display:flex; gap:.5rem; align-items:center">
+        <button class="theme" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
+        <button class="hamburger" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">☰</button>
+      </div>
+    </nav>
+    <div class="drawer" id="mobileNav" role="menu">
+      <a href="#about" role="menuitem">About</a>
+      <a href="#prodigies" role="menuitem">Prodigies</a>
+      <a href="#join" role="menuitem">Join</a>
+      <a href="#testimonials" role="menuitem">Testimonials</a>
+      <a href="#certificates" role="meniitem">Certificates</a>
+      <a href="#team" role="menuitem">Team</a>
+    </div>
   </header>
 
-  <main class="site-main">
-    <!-- Other site sections -->
-
-    <!-- Team section: now uses two boxes that share the same styles.
-         We kept <br> tags where they appear in content. -->
-    <section id="team" class="section">
-      <h2>Our Team</h2>
-
-      <div class="team-row">
-        <div class="team-card">
-          <img src="assets/images/member1.jpg" alt="Member 1" class="team-avatar" />
-          <h3>Member One</h3>
-          <p>Full Stack Developer<br>Likes coffee and clean code</p>
+  <main id="main">
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div>
+        <span class="eyebrow">Pepe</span>
+        <h1 class="h1">Programmmers Hub</h1>
+        <p class="lead">Join a community where projects become collaborations, and demos turn into celebrations … across Nigeria and beyond.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#join">Join PPH</a>
+          <a class="btn" href="#prodigies">See Prodigies</a>
         </div>
+      </div>
+      <div class="mock reveal">
+        <img src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/11/build-and-launch-your-website-with-ai.png" width="1200" height="700" alt="Build and launch your website with AI" />
+      </div>
+    </section>
 
-        <div class="team-card">
-          <img src="assets/images/member2.jpg" alt="Member 2" class="team-avatar" />
-          <h3>Member Two</h3>
-          <p>Frontend Engineer<br>Brings the UI to life</p>
+    <!-- About -->
+    <section id="about" class="section reveal">
+       <br><br><br><br>      
+      <div class="panel about">
+        <div>
+            <h2 class="big">Why Join Us?</h2>
+            <p>You will grow inside a lively network of young programmers who share ideas, build together, and lift one another from curiosity to confidence.</p>
+        </div>
+        <div>
+            <h2 class="big">Our Events</h2>
+            <p>We unite our community with year-round meetups, two free bootcamps, and an annual end-of-year gathering <i>wherever</i> our members come together.</p>
         </div>
       </div>
     </section>
 
-    <!-- If you previously had more team members, either stack them in the two boxes
-         or create scrollable/expand behavior. This layout intentionally shows two boxes. -->
-  </main>
+    <!-- Gallery / Prodigies -->
+    <section id="prodigies" class="section reveal">
+             <br><br><br><br>      
+      <header class="section-head">
+        <h2 class="big">Pepe Prodigies 💡</h2>
+        <small class="muted">Highlights from 2022–2025</small>
+      </header>
+      <div class="gallery" aria-live="polite">
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/10/emmanuel-okiri.jpg" alt="Emmanuel — Python Prodigy" width="700" height="700"></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/great-e1755909629853.png" alt="Great — JavaScript Prodigy" width="700" height="700"></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/imoh-e1755909658586.png" alt="Imoh — Python Prodigy" width="700" height="700"></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/evans-e1755909397669.jpg" alt="Evans — HTML Canvas Prodigy" width="700" height="700"></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/chibuchi-e1755909599707.png" alt="Chibuchi — Blockly Prodigy" width="700" height="700"></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/noelion-e1755909545347.png" alt="Noelion — JavaScript Prodigy" width="700" height="700"></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/10/karyn.jpg" alt="Karyn — HTML, CSS Prodigy" width="700" height="700"></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/10/jason.jpg" alt="Jason — Scratch Prodigy" width="700" height="700"></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/10/benjamin.jpg" alt="Benjamin — JavaScript Prodigy" width="700" height="700"></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/08/osayemi-e1755909574469.jpg" alt="Osayemi — CSS Prodigy" width="700" height="700"></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/10/onyinye-agu.jpg" alt="Onyinye — Blockly Prodigy" width="700" height="700"></figure>
+        <figure class="card"><img loading="lazy" src="https://agunechembaekene.wordpress.com/wp-content/uploads/2025/10/kushe.jpg" alt="Kushe — CSS Prodigy" width="700" height="700"></figure>
+      </div>
+    </section>
 
-  <footer class="site-footer">
-    <p>© 2026 Pepe Programmers Hub</p>
-  </footer>
+   <!-- Join -->
+<section id="join" class="section reveal">
+  <br><br><br><br>        
+  <div class="panel join" style="text-align: center;">
+
+<div style="font-family: Arial, sans-serif; padding: 40px; text-align: center; box-sizing: border-box;">
+  <h2 style="text-align: center;">💻 <strong>Join Pepe Programmers Hub</strong></h2>
+  <h5 style="text-align: center;">🚀 <em>Participate and Innovate</em></h5>
+
+  <form id="joinForm" style="max-width: 400px; margin: auto;">
+    <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 12px; margin-bottom: 15px; font-size: 16px; box-sizing: border-box;" />
+    <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 12px; margin-bottom: 15px; font-size: 16px; box-sizing: border-box;" />
+    <input type="tel" name="phone" placeholder="Your WhatsApp Number" required pattern="[0-9+ ]+" title="Enter a valid WhatsApp number" style="width: 100%; padding: 12px; margin-bottom: 15px; font-size: 16px; box-sizing: border-box;" />
+    <button type="submit" id="joinBtn" style="width: 100%; padding: 12px; font-size: 16px; background: #007BFF; color: white; border: none; cursor: pointer; box-sizing: border-box; border-radius: 5px;">Join</button>
+  </form>
+
+  <div id="successAnimation" style="display: none; margin: 20px auto; width: 100px; height: 100px;">
+    <svg viewBox="0 0 52 52" style="width: 100px; height: 100px;">
+      <path fill="none" stroke="#28a745" stroke-width="5" d="M14 27l7 7 16-16"/>
+      <circle fill="none" stroke="#28a745" stroke-width="5" cx="26" cy="26" r="24"/>
+    </svg>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('joinForm');
+  const button = document.getElementById('joinBtn');
+  const animation = document.getElementById('successAnimation');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    button.disabled = true;
+    button.textContent = 'Joining...';
+
+    const data = new FormData(form);
+
+    fetch('https://script.google.com/macros/s/AKfycbxG2s8T-yw2-7dGjPR-wZOdepBNtl-2-QjuouWK_F-0BrSklGf23P46JdUCaVx7HuQv/exec', {
+      method: 'POST',
+      body: data
+    })
+    .then(res => res.text())
+    .then(response => {
+      button.textContent = 'Joined ✅';
+      button.style.backgroundColor = '#28a745';
+      form.reset();
+      animation.style.display = 'block';
+      animation.style.animation = 'pop 0.5s ease-in-out';
+      window.location.href = "https://chat.whatsapp.com/DHz4JB9D1FF1iREzSLNFUL";
+    })
+    .catch(error => {
+      alert('Error: ' + error.message);
+      button.disabled = false;
+      button.textContent = 'Join';
+    });
+  });
+
+  const styleSheet = document.createElement("style");
+  styleSheet.innerText = `
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+  `;
+  document.head.appendChild(styleSheet);
+</script>
+</div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="section reveal">
+  <br><br><br><br>        
+  <div class="panel testimonials">
+    <h2 class="big">What Members Say</h2>
+    <div id="tList" class="t-quote" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- Certificate Verification -->
+<section id="certificates" class="section reveal">
+  <br><br><br><br>      
+  <div class="panel" style="text-align: center;">
+  <h2>🎓 Certificate Verification</h2>
+  <p>Enter your Certificate ID to check if it’s authentic.</p>
+  <input type="text" id="certificateId" placeholder="Enter Certificate ID">
+  <button id="verifyBtn">Verify</button>        
+  <br><br> 
+  <div id="result"></div>
+
+  <script>
+    const webAppURL = "https://script.google.com/macros/s/AKfycbwPp432y_PHVxKmJdvgS_hzacky8s_OiItnElY8mhfBXjEA0sUUAFhwa5qQv4oi_49P/exec";
+    const verifyBtn = document.getElementById("verifyBtn");
+    const resultDiv = document.getElementById("result");
+    verifyBtn.addEventListener("click", verifyCertificate);
+    function verifyCertificate() {
+      const certId = document.getElementById("certificateId").value.trim();
+      resultDiv.innerHTML = "";
+      if (!certId) { showMessage("⚠️ Please enter a Certificate ID.", "error"); return; }
+      showMessage("🔍 Searching, please wait...", "info");
+      fetch(`${webAppURL}?certificateId=${encodeURIComponent(certId)}`)
+        .then(res => { if (!res.ok) throw new Error("Network error: " + res.status); return res.json(); })
+        .then(data => {
+          if (data.found) {
+            const rec = data.record;
+            resultDiv.innerHTML = `...`;
+          } else {
+            showMessage("❌ Certificate not found. Please check the ID and try again.", "error");
+          }
+        })
+        .catch(err => { showMessage("⚠️ Error verifying certificate: " + err.message, "error"); });
+    }
+    function showMessage(msg, type) { let color; if (type === "error") color = "red"; else if (type === "info") color = "gray"; else color = "green"; resultDiv.innerHTML = `<p style="color:${color};">${msg}</p>`; }
+  </script>
+</div>
+</section>
+
+<!-- Team -->
+<section id="team" class="section reveal">
+  <br><br><br><br>      
+  <div class="panel team">
+    <div>
+      <h2 class="big">Agunechemba Ekene</h2> 
+      <p><strong>Web Innovator & Trainer</strong> →</p>
+      <br>
+      <p><a class="btn primary" href="https://agunechemba.name.ng/" target="_blank" rel="noopener">Connect</a></p>
+    </div>
+  </div>
+   <br><br>
+  <div class="panel team">
+    <div>
+      <h2 class="big">Kolawole Elizabeth</h2>
+      <p><strong>Customer Relations Officer</strong> →</p>
+      <br>
+      <p><a class="btn primary" href="https://wa.me/2348034982898" target="_blank" rel="noopener">Connect</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>© 2026 Pepe Programmers Hub</span>
+  <a class="btn" href="#home">Back to top ↑</a>
+</footer>
+
+<!-- New code background script is loaded first so canvas is ready -->
+<script src="code-bg.js" defer></script>
+<script src="script.js"></script>
 </body>
 </html>
