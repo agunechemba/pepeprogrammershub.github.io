@@ -1,3 +1,4 @@
+/* Removed light theme 
 // Theme toggle with persistence
 (function(){
   const root = document.documentElement;
@@ -12,6 +13,8 @@
     setIcon();
   });
 })();
+*/
+
 
 // Mobile drawer
 (function(){
